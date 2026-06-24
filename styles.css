@@ -1,0 +1,600 @@
+:root {
+  color-scheme: light;
+  --ink: #17201b;
+  --muted: #5d665f;
+  --paper: #f6f3ed;
+  --white: #fffdf8;
+  --line: #d8d1c3;
+  --forest: #244e3a;
+  --copper: #b96d3a;
+  --steel: #45616b;
+  --black: #0c1110;
+  --shadow: 0 18px 50px rgba(23, 32, 27, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;
+  padding: 14px clamp(18px, 4vw, 56px);
+  background: rgba(246, 243, 237, 0.92);
+  border-bottom: 1px solid rgba(216, 209, 195, 0.9);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: block;
+  border-radius: 8px;
+  background: var(--forest);
+  object-fit: cover;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 28px);
+  color: #313b35;
+  font-size: 0.94rem;
+  font-weight: 650;
+}
+
+.site-nav a {
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  border-color: var(--copper);
+}
+
+.hero {
+  position: relative;
+  min-height: min(780px, 82svh);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(12, 17, 16, 0.82), rgba(12, 17, 16, 0.44) 48%, rgba(12, 17, 16, 0.12)),
+    url("assets/koco-hero.png") center / cover no-repeat;
+  color: var(--white);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(12, 17, 16, 0.28), rgba(12, 17, 16, 0));
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 1080px;
+  padding: clamp(48px, 7vw, 82px) clamp(22px, 6vw, 72px);
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 14px;
+  color: var(--copper);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #f1b681;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 940px;
+  margin-bottom: 22px;
+  font-size: 5.15rem;
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 3.7rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.hero-copy {
+  max-width: 630px;
+  color: rgba(255, 253, 248, 0.9);
+  font-size: 1.18rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 800;
+  line-height: 1.15;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.button.primary {
+  background: var(--copper);
+  color: var(--white);
+}
+
+.button.secondary {
+  background: rgba(255, 253, 248, 0.08);
+  border-color: rgba(255, 253, 248, 0.44);
+  color: var(--white);
+}
+
+.signal-band {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.signal-band div {
+  min-height: 112px;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  padding: 24px clamp(18px, 4vw, 44px);
+  background: var(--white);
+}
+
+.signal-band span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.signal-band strong {
+  font-size: 1.22rem;
+}
+
+.section {
+  padding: clamp(64px, 10vw, 126px) clamp(20px, 5vw, 72px);
+}
+
+.intro-section {
+  background: var(--paper);
+}
+
+.intro-grid,
+.section-heading,
+.opportunity-layout,
+.contact-panel {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.72fr);
+  gap: clamp(32px, 6vw, 84px);
+  align-items: start;
+}
+
+.intro-copy {
+  color: #303832;
+  font-size: 1.08rem;
+}
+
+.intro-copy p:last-child,
+.company-card p:last-child,
+.playbook p:last-child,
+.fit-list p:last-child,
+.contact-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.companies-section {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.62fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.company-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.company-card {
+  min-height: 100%;
+  padding: clamp(24px, 3.2vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf6;
+  box-shadow: 0 1px 0 rgba(23, 32, 27, 0.04);
+}
+
+.company-card.featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(280px, 0.38fr);
+  gap: 28px;
+  background: #eef4ed;
+  border-color: #c9d7c8;
+}
+
+.company-topline {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.status,
+.company-type {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.status {
+  background: var(--forest);
+  color: var(--white);
+}
+
+.company-type {
+  background: #ebe4d7;
+  color: #4e4437;
+}
+
+.company-card p {
+  color: #3b443d;
+}
+
+.work-list {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #29342d;
+  font-weight: 650;
+}
+
+.work-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.work-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--copper);
+}
+
+.approach-section {
+  background: #eef0ea;
+}
+
+.playbook {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: #cfd6cc;
+  border: 1px solid #cfd6cc;
+}
+
+.playbook article {
+  min-height: 260px;
+  padding: clamp(22px, 3vw, 30px);
+  background: #f9f8f2;
+}
+
+.playbook span {
+  display: inline-flex;
+  margin-bottom: 28px;
+  color: var(--steel);
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.playbook p {
+  color: var(--muted);
+}
+
+.opportunities-section {
+  background: var(--black);
+  color: var(--white);
+}
+
+.opportunities-section .section-kicker {
+  color: #f1b681;
+}
+
+.opportunity-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(300px, 0.86fr);
+  gap: clamp(34px, 6vw, 82px);
+}
+
+.opportunity-layout > div > p {
+  color: rgba(255, 253, 248, 0.72);
+  margin-top: 22px;
+  font-size: 1.08rem;
+}
+
+.fit-list {
+  display: grid;
+  gap: 14px;
+}
+
+.fit-list article {
+  padding: 24px;
+  border: 1px solid rgba(255, 253, 248, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.07);
+}
+
+.fit-list p {
+  color: rgba(255, 253, 248, 0.72);
+}
+
+.contact-section {
+  background: var(--paper);
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(26px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 46px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.contact-panel > * {
+  min-width: 0;
+}
+
+.contact-panel h2 {
+  max-width: 720px;
+}
+
+.contact-panel p {
+  max-width: 690px;
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 26px clamp(20px, 5vw, 72px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer span:first-child {
+  color: var(--ink);
+  font-weight: 900;
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px 18px;
+  }
+
+  .hero {
+    min-height: 78svh;
+    background-position: 45% center;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .signal-band,
+  .intro-grid,
+  .section-heading,
+  .company-grid,
+  .company-card.featured,
+  .playbook,
+  .opportunity-layout,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .company-card.featured {
+    display: block;
+  }
+
+  .playbook article {
+    min-height: auto;
+  }
+
+  .contact-panel .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .site-header {
+    min-height: auto;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero {
+    min-height: 76svh;
+  }
+
+  h1 {
+    font-size: 3.1rem;
+  }
+
+  h2 {
+    font-size: 2.45rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .hero-content {
+    padding-top: 44px;
+    padding-bottom: 48px;
+  }
+
+  .hero-actions,
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .button {
+    min-height: 46px;
+  }
+
+  .signal-band div {
+    min-height: 94px;
+  }
+
+  .section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .contact-panel {
+    padding: 24px 18px;
+  }
+
+  .contact-panel .button {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}

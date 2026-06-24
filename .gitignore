@@ -1,0 +1,7 @@
+# Internal — do not publish to the public website repo
+docs/
+execution/
+*.md
+.DS_Store
+work/
+outputs/
