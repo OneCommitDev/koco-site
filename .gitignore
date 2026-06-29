@@ -2,6 +2,8 @@
 docs/
 execution/
 agents/
+dashboard/
+tmp/
 *.md
 .DS_Store
 work/
