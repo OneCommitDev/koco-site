@@ -1,6 +1,7 @@
 # Internal — do not publish to the public website repo
 docs/
 execution/
+agents/
 *.md
 .DS_Store
 work/
